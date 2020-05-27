@@ -1,0 +1,41 @@
+<%- include('../../layout/header', { page: 'login' }); %>
+<%- include('../../layout/homenavbar'); %>
+<section class="container-fluid my-3">
+   <div class="container p-3">
+      <div class="col-6 mx-auto">
+         <h1>Login de Admin</h1>
+         <hr>
+         <form action="/auth" method="POST" class="form-group mt-3" autocomplete="off">
+            <label>E-mail</label>
+            <input type="email" class="form-control" name="email" autofocus><br>
+            <label>Senha</label>
+            <div class="input-group">
+               <input type="password" class="form-control" name="password" id="pass">
+               <div class="input-group-prepend">
+                  <button type="button" class="btn btn-outline-secondary" id="showPassword">
+                     <i class="fa fa-eye"></i>
+                  </button>
+               </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mt-5">Entrar <i class="fa fa-sign-in ml-2"></i></button>
+         </form>
+      </div>
+   </div>
+</section>
+<%- include('../../layout/footer'); %>
+<script>
+   $(document).ready(function() {
+      $("#showPassword").on('click', function() {
+         let type = $('#pass').attr('type') //pegar o tipo do input
+
+         if (type === 'password') { //se o tipo for password, altera para text
+            $('#pass').attr('type', 'text')
+            $(this).html('<i class="fa fa-eye-slash"></i>')
+         } else { //senão altera para password
+            $('#pass').attr('type', 'password')
+            $(this).html('<i class="fa fa-eye"></i>')
+         }
+      })
+   })
+</script>

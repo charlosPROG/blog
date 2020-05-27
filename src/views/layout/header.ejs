@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="shortcut icon" type="image/x-icon" href="/css/favicon.ico">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <link rel="stylesheet" href="/css/style.css">
+   <% if (page === 'home') { %>
+   <title>Home</title>
+   <% } else if (page === 'newCategory') { %>
+   <title>Nova Categoria</title>
+   <% } else if (page === 'category') { %>
+   <title>Categorias</title>
+   <% } else if (page === 'editCategory') { %>
+   <title>Editar Categoria</title>
+   <% } else if (page === 'newArticle') { %>
+   <title>Novo Artigo</title>
+   <% } else if (page === 'article') { %>
+   <title>Artigos</title>
+   <% } else if (page === 'editArticle') { %>
+   <title>Editar Artigo</title>
+   <% } else if (page === 'create') { %>
+   <title>Criar Usuário</title>
+   <% } else if (page === 'users') { %>
+   <title>Usuários</title>
+   <% } else if (page === 'login') { %>
+   <title>Login de Admin</title>
+   <% } else { %>
+   <title>Blog de teste</title>
+   <% } %>
+</head>

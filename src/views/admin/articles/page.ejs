@@ -1,0 +1,28 @@
+<%- include('../../layout/header', { page:'home' }); %>
+<%- include('../../layout/homenavbar'); %>
+<section class="container-fluid my-3">
+   <div class="container p-3">
+      <% articles.rows.map(art => { %>
+         <div class="card">
+            <div class="card-header">
+               <h3><%= art.title %></h3>
+            </div>
+            <div class="card-body">
+               <a href="/<%= art.slug %>" class="btn btn-primary"><i class="fa fa-book mr-2"></i>Ler artigo</a>
+            </div>
+         </div><br>
+      <% }) %>
+      <div class="mb-5">
+         <% if (page > 2) { %>
+            <a href="/articles/page/<%= page - 1 %>" class="btn btn-primary float-left"><i class="fa fa-arrow-left mr-2"></i> Página anterior</a>
+         <% } else if (page === 2) { %>
+            <a href="/" class="btn btn-primary float-left"><i class="fa fa-arrow-left mr-2"></i> Página anterior</a>
+         <% } %>
+
+         <% if (next) { %>
+            <a href="/articles/page/<%= page + 1 %> " class="btn btn-primary float-right">Próxima página <i class="fa fa-arrow-right ml-2"></i></a>
+         <% } %>
+      </div>
+   </div>
+</section>
+<%- include('../../layout/footer'); %>

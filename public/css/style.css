@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap'); /* FONTES */
+:root { --shadow: 0 0 23px rgba(0,0,0,.3); --bcrColor: #0086c0; } /* VARIÁVEIS */
+body {
+   line-height: 20px !important;
+   font-family: 'Montserrat' !important;
+   font-size: 16px !important;
+   color: #444;
+   overflow-y: scroll;
+}
+section > div { box-shadow: var(--shadow) !important; } /* SOMBREAMENTO NA PARTE EXTERNA DO CABEÇALHO E DO CORPO DA PÁGINA */

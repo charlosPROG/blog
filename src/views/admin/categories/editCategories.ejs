@@ -1,0 +1,19 @@
+<%- include('../../layout/header', { page: 'editCategory' }); %>
+<%- include('../../layout/adminnavbar'); %>
+<section class="container-fluid my-3">
+   <div class="container p-3">
+      <h1>Editar categoria</h1>
+      <hr>
+      <form action="/categories/update" method="POST" class="form-group mt-3" autocomplete="off">
+         <label>Insira um título</label>
+         <input type="text" class="form-control" name="title" autofocus value="<%= categories.title %>">
+         <input type="hidden" name="id" value="<%= categories.id %>">
+
+         <div class="d-flex justify-content-end mt-4">
+            <button type="submit" class="btn btn-primary mr-3"><i class="fa fa-save mr-2"></i>Atualizar</button>
+            <a href="/admin/categories" class="btn btn-secondary"><i class="fa fa-ban mr-2"></i>Cancelar</a>
+         </div>
+      </form>
+   </div>
+</section>
+<%- include('../../layout/footer'); %>

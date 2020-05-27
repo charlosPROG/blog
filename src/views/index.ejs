@@ -1,0 +1,32 @@
+<%- include('./layout/header', { page: 'home' }); %>
+<%- include('./layout/homenavbar'); %>
+<section class="container-fluid my-3">
+   <div class="container p-3">
+      <div class="jumbotron alert-info">
+         <h1 class="display-4">Bem-vindo!!</h1>
+         <p class="lead">Isso é um teste para NodeJS</p>
+         <hr class="my-4">
+         <p>
+            Sed justo gubergren sanctus diam diam sadipscing labore. Lorem ut et et elitr lorem accusam accusam rebum clita. Sadipscing elitr est amet erat magna ipsum, sadipscing no lorem takimata eos lorem rebum, sit duo ea dolore sit. Takimata magna at et ea. Et sed aliquyam sit takimata lorem labore gubergren.
+         </p>
+         <a href="#" role="button" class="btn btn-primary">Leia mais</a>
+      </div>
+
+      <% articles.map(art => { %>
+         <div class="card">
+            <div class="card-header">
+               <h3><%= art.title %></h3>
+            </div>
+            <div class="card-body">
+               <a href="/<%= art.slug %>" class="btn btn-primary"><i class="fa fa-book mr-2"></i>Ler artigo</a>
+            </div>
+         </div><br>
+      <% }) %>
+      <div class="mb-5">
+         <div class="d-flex justify-content-around">
+            <a href="/articles/page/2" class="btn btn-primary">Próxima página <i class="fa fa-arrow-right ml-2"></i></a>
+         </div>
+      </div>
+   </div>
+</section>
+<%- include('./layout/footer'); %>
